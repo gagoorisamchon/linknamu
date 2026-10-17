@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8ef;
+  --foreground: #3b2f2a;
+  --muted: #8a776b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
 body {
-  background: var(--background);
+  /* 크림색 → 연한 살구색, 위아래로 은은한 빛 번짐 */
+  background:
+    radial-gradient(60rem 40rem at 50% -10%, rgb(255 255 255 / 0.7), transparent 70%),
+    radial-gradient(50rem 35rem at 100% 110%, rgb(249 196 166 / 0.45), transparent 70%),
+    linear-gradient(170deg, #fff8ef 0%, #fdeee2 50%, #fbdcc8 100%);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
 }
